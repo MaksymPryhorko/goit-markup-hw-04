@@ -10,6 +10,7 @@
   --background-white: rgba(245, 244, 250, 1);
   --studio-header: rgba(0, 0, 0, 1);
   --border-color: rgba(236, 236, 236, 1);
+  --grey-social-links: rgba(175, 177, 184, 1);
 }
 
 .visually-hidden {
@@ -31,6 +32,10 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
+}
+
+.team > .container {
+  margin-top: 50px;
 }
 
 .cont-size {
@@ -75,11 +80,7 @@
 
 .contacts-site {
   padding-left: 0px;
-  margin-left: 331px;
-}
-
-.contacts-site li:last-child {
-  margin-left: 50px;
+  margin-left: auto;
 }
 
 body {
@@ -98,6 +99,7 @@ body {
   font-weight: bold;
   font-size: 26px;
   line-height: 31px;
+  letter-spacing: 0.03em;
 }
 
 .studio-header {
@@ -111,6 +113,8 @@ body {
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
+
+  margin-left: 10px;
 }
 
 .links-nav {
@@ -127,6 +131,11 @@ body {
 .contacts-links:hover,
 .contacts-links:focus {
   color: var(--blue-text);
+}
+
+.header-button:hover,
+.header-button:focus {
+  fill: var(--blue-text);
 }
 
 .links-nav.current {
@@ -176,12 +185,28 @@ a {
 .advantages-list {
   display: flex;
   margin: 0px;
-  justify-content: space-between;
   padding: 0px;
 }
 
 .advantages {
-  margin-top: 94px;
+  padding-top: 94px;
+}
+
+.advantages-list .button-icon {
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  fill: var(--black-text);
+}
+
+.button-container {
+  height: 120px;
+  border-radius: 4px;
+  background-color: var(--background-white);
+  margin-bottom: 30px;
+  padding: 25px 0px;
 }
 
 .advantages-list .item {
@@ -218,14 +243,15 @@ a {
   letter-spacing: 0.03em;
 
   margin: 0px;
-  margin-top: 10px;
+  padding-top: 10px;
 }
 
 .studio {
-  margin-top: 94px;
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
-.photo-works {
+.studio > .container {
   margin-top: 50px;
 }
 
@@ -245,7 +271,6 @@ a {
   margin: 0;
   padding: 0px;
   display: flex;
-  padding-top: 50px;
 }
 
 .photo-item > img {
@@ -254,6 +279,11 @@ a {
 
 .photo-item:not(:first-child) {
   margin-left: 30px;
+}
+
+.photo-item {
+  padding-bottom: 30px;
+  background-color: var(--white-text10);
 }
 
 .team-title {
@@ -266,18 +296,17 @@ a {
   letter-spacing: 0.03em;
 
   margin: 0px;
-  margin-top: 94px;
 }
 
 .team-list {
   display: flex;
-  margin-top: 50px;
   padding: 0px;
-  margin-bottom: 0px;
+  margin: 0px;
 }
 
 .team {
   background-color: var(--background-white);
+  padding: 94px 0px;
 }
 
 .team-names {
@@ -307,6 +336,45 @@ a {
   text-align: center;
 }
 
+.social {
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 16px;
+}
+
+.social-items .button-social {
+  padding: 0px;
+  border: none;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  background-color: var(--white-text10);
+}
+
+.team .button-social:hover {
+  background-color: var(--blue-text);
+  color: white;
+}
+
+.social-list {
+  display: flex;
+  padding: 0px;
+}
+
+.social-items:not(:first-child) {
+  margin-left: 10px;
+}
+
+.team .button-social {
+  color: var(--grey-social-links);
+}
+
+.team .button-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
 .button {
   background-color: var(--background-white);
   color: var(--black-text);
@@ -319,6 +387,19 @@ a {
   border: none;
   border-radius: 4px;
   padding: 6px 22px;
+}
+
+.header-button {
+  color: var(--grey-text);
+}
+
+.header .button-icon {
+  width: 16px;
+  height: 12px;
+}
+
+.contacts-site > .header-button:last-child {
+  margin-left: 30px;
 }
 
 .buttons {
@@ -339,6 +420,18 @@ a {
   background-color: var(--white-text10);
 }
 
+.sites-name,
+.sites-description {
+  margin: 0px;
+}
+
+.name-description {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
+  border-left: 1px solid rgba(238, 238, 238, 1);
+  border-right: 1px solid rgba(238, 238, 238, 1);
+}
+
 .sites-name {
   color: var(--black-text);
   font-style: normal;
@@ -355,28 +448,52 @@ a {
   font-size: 16px;
   line-height: 30px;
   letter-spacing: 0.03em;
+  margin-top: 4px;
+}
+
+.clients-list {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+}
+
+.clients .button-icon {
+  justify-content: center;
+  align-items: center;
+  fill: var(--grey-social-links);
+}
+
+.clients-link {
+  display: flex;
+  width: 170px;
+  height: 90px;
+  border: 1px solid var(--grey-social-links);
+  border-radius: 4px;
+}
+
+.clients-item:not(:first-child) {
+  margin-left: 30px;
+}
+
+.clients .container {
+  margin-top: 50px;
 }
 
 footer {
   background-color: var(--background-grey);
-  margin-top: 94px;
+  padding: 60px 0px;
 }
 
-.footer .cont-size {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.cont-size .address {
+.address {
+  margin-top: 20px;
 }
 
 .footer-adress {
   display: inline-block;
-  margin-top: 20px;
 }
+
 .footer-contacts {
   display: inline-block;
-  margin-top: 9px;
 }
 
 .footer-contacts {
@@ -414,29 +531,13 @@ footer {
   justify-content: center;
 }
 
-.sites-name,
-.sites-description {
-  margin: 0px;
-  margin-left: 24px;
-  margin-right: 24px;
-}
-
 .box-sites {
-  margin-top: 56px;
+  margin-top: 50px;
 }
 
 .container .sites {
   width: 370px;
   height: 404px;
-}
-
-.sites-name {
-  margin-top: 20px;
-}
-
-.sites-description {
-  margin-top: 4px;
-  margin-bottom: 20px;
 }
 
 .our-works > .sites {
@@ -449,5 +550,18 @@ footer {
 }
 
 .main-portfolio {
-  margin-top: 155px;
+  padding-top: 139px;
+  padding-bottom: 49px;
+}
+
+.clients {
+  padding: 94px 0px;
+}
+
+.clients .clients-title {
+  margin: 0px;
+  color: var(--black-text);
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
 }
